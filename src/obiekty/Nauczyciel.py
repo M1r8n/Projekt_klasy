@@ -9,7 +9,24 @@ class Nauczyciel(Osoba):
     tytul: str
     stawkaGodzinowa: float
     harmonogram: Harmonogram
+
     def __init__(self):
+        self.harmonogram = Harmonogram()
+        pass
+
+    def dodajUcznia(self, parametry):
+        """Dodaje ucznia do nauczyciela"""
+        pass
+
+    def usunUcznia(self, parametry):
+        """Usuwa ucznia z lisy nauczyciela"""
+        pass
+
+    def dodajZajecia(self, prarametry):
+        """Dodawanie zajec do grafiku nauczyciela"""
+        pass
+    def usunZajecia(self, parametry):
+        """Usuwanie grafiku z zajec nauczyciela"""
         pass
 
     def najblizszeZajecia(self):

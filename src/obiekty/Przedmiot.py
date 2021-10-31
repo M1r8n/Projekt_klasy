@@ -5,19 +5,19 @@ from dataclasses import dataclass,field
 class Przedmiot:
     nazwa: str
     oceny: List[int] = field(init=False)
-    iloscGodzin: int
     cena: int
-    dzientygodnia: str
-    godzina: int
 
     def __post_init__(self):
         """Tworzenie pustej listy ocen"""
         self.oceny = list()
 
+    def getNazwa(self) -> str:
+        """Zwracanie nazwy przedmiotu"""
+        return self.nazwa
+
     def __str__(self):
-        return f"Przedmiot: {self.nazwa}, ilość godzin: {self.iloscGodzin}, cena za godzinę: {self.cena} zł" \
-               f", dzień: {self.dzientygodnia}, o godzinie:{self.godzina}, oceny z przedmiotu: " \
-               f"{self.oceny if len(self.oceny)>0 else 'Brak ocen'}"
+        return f"Przedmiot: {self.nazwa}, cena za godzinę: {self.cena} zł" \
+               f", oceny z przedmiotu: {self.oceny if len(self.oceny)>0 else 'Brak ocen'}"
 
     def dodajOcene(self, ocena: int) -> None:
         """Dodawanie nowej oceny z przedmiotu"""
